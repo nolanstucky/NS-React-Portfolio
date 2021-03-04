@@ -9,6 +9,7 @@ const nolanIcon = 'https://avatars.githubusercontent.com/u/59997535?s=460&u=2afb
 class Navbar extends Component {
     render() {
         return (
+            <Box >
             <Header background="#222E42" animation={{ type: "fadeIn", duration: "1000" }} elevation="large">
                 <Box direction="row" align="center" gap="small">
                     <Anchor color="white" href="https://github.com/nolanstucky">
@@ -33,6 +34,7 @@ class Navbar extends Component {
                 </Nav>
 
             </Header>
+            </Box>
 
 
         )

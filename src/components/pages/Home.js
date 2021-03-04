@@ -1,17 +1,20 @@
 import React from "react";
-import { Main, Grid, Box } from 'grommet';
+import { Main, Grid, Box, Stack } from 'grommet';
 import Profile from '../profile/index'
-import Particles from "react-tsparticles";
-import particlesOptions from "../particles/particles.json"
+import Particle from '../particles/Particle'
 
 function Home() {
     return (
-        <Main>
-            <Particles options={particlesOptions}/>
-            <Box align="center">
-                <Profile />
-            </Box>
-        </Main>
+        
+            <Stack>
+                <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }} >
+                    <Particle />
+                </Box>
+                <Box align="center" margin="25px" overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
+                    <Profile />
+                </Box>
+            </Stack>
+        
     );
 }
 

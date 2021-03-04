@@ -1,14 +1,20 @@
 import React from "react";
+import { Main, Grid, Box, Stack } from 'grommet';
+import Profile from '../profile/index'
+import Particle from '../particles/Particle'
+import ProjectCard from '../ProjectCard/index'
+import projectData from '../../data'
 
 function Projects() {
   return (
-    <div>
-      <h1>Projects</h1>
-      <p>
-            This is my project test
-   
-      </p>
-    </div>
+    <Stack>
+      <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
+        <Particle />
+      </Box>
+      <Box margin="25px" align="center"  >
+        {projectData.map(data => <ProjectCard props={data}/>)}
+      </Box>
+    </Stack>
   );
 }
 
