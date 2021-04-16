@@ -7,7 +7,7 @@ function Particle() {
     <Particles
       params={{
         "background": {
-            "image": "url('https://i.imgur.com/mjJxQw7.jpg')"
+            "image": "src('./assets/backgroundmountain3.jpg')"
             
     
         },

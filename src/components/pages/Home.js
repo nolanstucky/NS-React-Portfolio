@@ -10,8 +10,9 @@ function Home() {
                 <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }} >
                     <Particle />
                 </Box>
+                
                 <Box align="center" margin="25px" overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
-                    <Profile />
+                    {/* <Profile /> */}
                 </Box>
             </Stack>
         
