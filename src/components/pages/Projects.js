@@ -11,9 +11,22 @@ function Projects() {
       <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
         <Particle />
       </Box>
-      <Box margin="25px" align="center"  >
-        {projectData.map(data => <ProjectCard props={data}/>)}
-      </Box>
+      <Grid
+        areas={[
+          ['blank1', 'search', 'blank2'],
+        ]}
+        columns={['50px', 'flex', '50px']}
+        rows={['50px']}
+        gap="small"
+        responsive="true"
+      >
+        <Box gridArea="blank1" />
+        <Box gridArea="blank2" />
+
+        <Box margin="25px"  direction="row" gridArea="search">
+          {projectData.map(data => <ProjectCard props={data} />)}
+        </Box>
+      </Grid>
     </Stack>
   );
 }

@@ -35,16 +35,16 @@ const theme = {
                   />
                 </CardBody>
                 <Box pad={{ horizontal: 'medium' }} responsive={false}>
-                  <Heading level="3" margin={{ vertical: 'medium' }}>
+                  <Heading level="3" margin={{ vertical: 'medium' }} color="white">
                     {props.props.projectTitle}
                   </Heading>
-                  <Paragraph margin={{ top: 'none' }}>
+                  <Paragraph margin={{ top: 'none' }} color="white">
                     {props.props.description}
                   </Paragraph>
                 </Box>
                 <Box alignContent="center" direction="row">
-                  <Button href={props.props.deployedLink}><Heroku/><Text>Deployed Link</Text></Button>
-                  <Button href={props.props.githubLink}><Github/><Text>Github Link</Text></Button>
+                  <Button href={props.props.deployedLink}><Heroku/><Text color="white">Deployed Link</Text></Button>
+                  <Button href={props.props.githubLink}><Github/><Text color="white">Github Link</Text></Button>
                 </Box>
               </Card>
             </Box>

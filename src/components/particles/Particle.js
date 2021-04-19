@@ -7,7 +7,7 @@ function Particle() {
     <Particles
       params={{
         "background": {
-            "image": "src('./assets/backgroundmountain3.jpg')"
+            "image": "url('https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/backgroundmountain3darker.png?raw=true')"
             
     
         },

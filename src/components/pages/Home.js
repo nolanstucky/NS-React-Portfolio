@@ -12,7 +12,7 @@ function Home() {
                 </Box>
                 
                 <Box align="center" margin="25px" overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
-                    {/* <Profile /> */}
+                    <Profile />
                 </Box>
             </Stack>
         

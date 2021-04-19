@@ -3,12 +3,12 @@ import { Box, Avatar, Anchor, Grid, Text, Heading} from 'grommet';
 import './style.css'
 import { Github, Linkedin} from 'grommet-icons';
 
-const nolanIcon = 'https://avatars.githubusercontent.com/u/59997535?s=460&u=2afb177181195736519ec2943467b191069bd40d&v=4';
+const nolanIcon = '/assets/nolan-picture.png';
 
 class Profile extends Component {
     render() {
         return (
-            <Box style={{background:"rgba(0,0,0,0.4)"}} round="90px">
+            <Box >
             <Grid
                 areas={[
                     ['main', 'main', 'text', 'blank'],
