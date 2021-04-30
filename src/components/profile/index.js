@@ -3,7 +3,7 @@ import { Box, Avatar, Anchor, Grid, Text, Heading} from 'grommet';
 import './style.css'
 import { Github, Linkedin} from 'grommet-icons';
 
-const nolanIcon = '/assets/nolan-picture.png';
+const nolanIcon = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan-picture.png?raw=true';
 
 class Profile extends Component {
     render() {

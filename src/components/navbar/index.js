@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Nav, Anchor, Header, Avatar } from 'grommet';
+import { Box, Nav, Anchor, Header, Avatar, Text } from 'grommet';
 import { Home, Projects } from 'grommet-icons'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ const nolanIcon = 'https://avatars.githubusercontent.com/u/59997535?s=460&u=2afb
 class Navbar extends Component {
     render() {
         return (
-            <Box >
+            <Box style={{ position: "fixed", top: 0, width: "100%" , zIndex: 10}}>
             <Header background="#222E42" animation={{ type: "fadeIn", duration: "1000" }} elevation="large">
                 <Box direction="row" align="center" gap="small">
                     <Anchor color="white" href="https://github.com/nolanstucky">
@@ -21,8 +21,9 @@ class Navbar extends Component {
 
                     <Box direction="row" align="center" gap="small" pad="small">
                         <Anchor>
-                            <Link to='/'>{<Home />}</Link>
+                            <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>{<Home />}Home</Link>
                         </Anchor>
+                        
                     </Box>
 
                     <Box direction="row" align="center" gap="small" pad="small">

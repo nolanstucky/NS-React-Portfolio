@@ -14,11 +14,11 @@ function Particle() {
         "interactivity": {
           "events": {
             "onClick": {
-              "enable": true,
+              "enable": false,
               "mode": "repulse"
             },
             "onHover": {
-              "enable": true,
+              "enable": false,
               "mode": "bubble"
             }
           },
@@ -82,10 +82,10 @@ function Particle() {
             "random": {
               "enable": true
             },
-            "value": 2,
+            "value": 1,
             "animation": {
               "minimumValue": 0.1,
-              "speed": 5
+              "speed": 1
             }
           }
         }
