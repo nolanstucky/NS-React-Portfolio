@@ -21,7 +21,7 @@ function Home() {
                     areas={[
                         ['main', 'main', 'main'],
                         ['blank', 'about', 'blank2'],
-                        ['blank3', 'languages', 'blank4'],
+                        ['languages', 'languages', 'languages'],
                         ['blank5', 'contact', 'blank6']
                     ]}
                     columns={['medium', 'flex', 'medium']}
@@ -75,29 +75,33 @@ function Home() {
                         </Box>
 
                     </Box>
-                    <Box gridArea="blank3" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="400px" margin={{ "top": "3px" }} />
-                    <Box gridArea="blank4" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="400px" margin={{ "top": "3px" }} />
-                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "3px" }}>
+
+                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }}  margin={{ "top": "3px" }}>
                         <Grid
                             areas={[
-                                ['js', 'html', 'css','c#'],
+                                ['js', 'html', 'css','c'],
                             ]}
-                            columns={['medium', 'flex', 'medium']}
+                            columns={['flex', 'flex', 'flex','flex']}
                             rows={['small']}
 
                             responsive="true"
                         >
                             <Box gridArea="js">
-                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true"alt="js-logo" width="50px" height="50px"/>
+                                {/* <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true"alt="js-logo" width="150px" height="150px"/> */}
+                                <Avatar size="150px" src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true" margin={{ "top": "25px" }} />
+                                js
                             </Box>
                             <Box gridArea="html">
-
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/html-logo.png?raw=true"alt="js-logo" width="150px" height="150px"/>
+                                html
                             </Box>
                             <Box gridArea="css">
-
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/css-logo.jpg?raw=true"alt="js-logo" width="150px" height="150px"/>
+                                css
                             </Box>
-                            <Box gridArea="c#">
-
+                            <Box gridArea="c">
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/c-logo-icon-28402.png?raw=true"alt="js-logo" width="150px" height="150px"/>
+                                c#
                             </Box>
                         </Grid>
                     </Box>
