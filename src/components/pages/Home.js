@@ -88,7 +88,7 @@ function Home() {
                             responsive="true"
                         >
                             <Box gridArea="js">
-                                <img src="logo192.png"alt="js-logo"/>
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true"alt="js-logo" width="50px" height="50px"/>
                             </Box>
                             <Box gridArea="html">
 
