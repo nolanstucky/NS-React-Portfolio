@@ -21,14 +21,20 @@ class Navbar extends Component {
 
                     <Box direction="row" align="center" gap="small" pad="small">
                         <Anchor>
-                            <Link to='/' style={{ color: 'inherit', textDecoration: 'inherit' }}>{<Home />}Home</Link>
+                            <Link to='/' style={{ color: '#FCE181', textDecoration: 'inherit' }}>Home</Link>
                         </Anchor>
                         
                     </Box>
 
                     <Box direction="row" align="center" gap="small" pad="small">
                         <Anchor>
-                            <Link to='/projects'>{<Projects />}</Link>
+                        <Link to='/projects' style={{ color: '#FCE181', textDecoration: 'inherit' }}>Projects</Link>
+                        </Anchor>
+                    </Box>
+
+                    <Box direction="row" align="center" gap="small" pad="small">
+                        <Anchor>
+                        <Link to='/resume' style={{ color: '#FCE181', textDecoration: 'inherit' }}>Resume</Link>
                         </Anchor>
                     </Box>
 

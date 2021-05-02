@@ -5,7 +5,7 @@ import Particle from '../particles/Particle'
 import ProjectCard from '../ProjectCard/index'
 import projectData from '../../data'
 
-function Projects() {
+function Resume() {
   return (
     <Stack>
       <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }}>
@@ -56,4 +56,4 @@ function Projects() {
   );
 }
 
-export default Projects;
+export default Resume;

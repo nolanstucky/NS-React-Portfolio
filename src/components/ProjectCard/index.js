@@ -13,7 +13,7 @@ const theme = {
     },
     card: {
       elevation: 'none',
-      background: 'light-2',
+      background: 'light-4',
       footer: {
         pad: 'medium',
       },
@@ -26,7 +26,7 @@ const theme = {
         return (
             <Grommet theme={theme}>
             <Box pad="medium" align="start">
-              <Card elevation="large" width="medium">
+              <Card elevation="large" width="medium" border={{"color":"#FCE181"}}>
                 <CardBody height="small">
                   <Image
                     fit="cover"

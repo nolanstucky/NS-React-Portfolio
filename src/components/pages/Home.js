@@ -67,7 +67,7 @@ function Home() {
                     <Box gridArea="about" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "110px" }}>
                         <Avatar size="180px" src={nolanIcon} margin={{ "top": "25px" }} />
                         <Heading color="white">Let me <span style={{ color: "#FCE181" }}>introduce</span> myself</Heading>
-                        <Box align="start">
+                        <Box align="start" margin={{"left":"50pxnp"}}>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}>I am a full stack web developer that absolutly loves the world of technology.</Text>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I have a passion for learning especially when it comes to things that interest me.</Text>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> Such as full stack web development and game development.</Text>
@@ -76,44 +76,56 @@ function Home() {
 
                     </Box>
 
-                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }}  margin={{ "top": "3px" }}>
+                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }}>
+                        <Box margin={{ "top": "25px" }} align="center">
+                            <Heading color="white"><span style={{ color: "#FCE181" }}>Languages</span> and <span style={{ color: "#FCE181" }}>Technologies</span></Heading>
+                            
+                        </Box>
+
                         <Grid
                             areas={[
-                                ['js', 'html', 'css','c'],
+                                ['blank', 'js', 'html', 'css', 'c'],
                             ]}
-                            columns={['flex', 'flex', 'flex','flex']}
+                            columns={['500px', '250px', '250px', '250px', '250px']}
                             rows={['small']}
 
                             responsive="true"
                         >
+            
                             <Box gridArea="js">
                                 {/* <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true"alt="js-logo" width="150px" height="150px"/> */}
                                 <Avatar size="150px" src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/JavaScript-logo.png?raw=true" margin={{ "top": "25px" }} />
-                                js
+
                             </Box>
-                            <Box gridArea="html">
-                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/html-logo.png?raw=true"alt="js-logo" width="150px" height="150px"/>
-                                html
+                            <Box gridArea="html" margin={{ "top": "25px" }}>
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/logo-2582748_1280.png?raw=true" alt="js-logo" width="150px" height="150px" />
+
                             </Box>
-                            <Box gridArea="css">
-                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/css-logo.jpg?raw=true"alt="js-logo" width="150px" height="150px"/>
-                                css
+                            <Box gridArea="css" margin={{ "top": "25px" }}>
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/css3.png?raw=true" alt="js-logo" width="150px" height="150px" />
+
                             </Box>
-                            <Box gridArea="c">
-                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/c-logo-icon-28402.png?raw=true"alt="js-logo" width="150px" height="150px"/>
-                                c#
+                            <Box gridArea="c" margin={{ "top": "25px" }}>
+                                <img src="https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/c-logo-icon-28402.png?raw=true" alt="js-logo" width="150px" height="150px" />
+
                             </Box>
                         </Grid>
+
+                        <Box margin={{ "top": "25px", "left":"550px" }} >
+                           
+                            <Text color="white" size="25px"><span style={{ color: "#FCE181" }}>Languages:</span> Javascript, HTML, CSS, Typescript, C#, Python, UNIX shell</Text>
+                            <Text color="white" size="25px"><span style={{ color: "#FCE181" }}>Technologies:</span> React, Express, MySql, MongoDb, Node Handlebars,<br/> Unity, Blender, Microsoft Excel</Text>
+                        </Box>
                     </Box>
 
-                        <Box gridArea="blank5" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="400px" margin={{ "top": "3px" }} />
-                        <Box gridArea="blank6" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }} />
-                        <Box gridArea="contact" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "3px" }}>
-                            <Box margin={{ "top": "25px" }}>
-                                <Heading color="white">Contact me <span style={{ color: "#FCE181" }}>here</span></Heading>
-                                <Text color="white">Test</Text>
-                            </Box>
+                    <Box gridArea="blank5" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="400px" margin={{ "top": "3px" }} />
+                    <Box gridArea="blank6" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }} />
+                    <Box gridArea="contact" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "3px" }}>
+                        <Box margin={{ "top": "25px" }}>
+                            <Heading color="white">Contact me <span style={{ color: "#FCE181" }}>here</span></Heading>
+                            <Text color="white">Test</Text>
                         </Box>
+                    </Box>
                 </Grid>
             </Box>
         </Stack>
