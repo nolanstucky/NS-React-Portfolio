@@ -19,7 +19,7 @@ function App() {
         <Route path='/resume' component={Resume}/>
       </Switch>
       </Box>
-      <Footbar/>
+      {/* <Footbar/> */}
     </HashRouter>
   );
 }

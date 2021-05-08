@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Nav, Anchor, Header, Avatar, Text } from 'grommet';
+import { Box, Nav, Anchor, Header, Avatar, Grommet} from 'grommet';
 import { Home, Projects } from 'grommet-icons'
 import { Link } from 'react-router-dom'
 

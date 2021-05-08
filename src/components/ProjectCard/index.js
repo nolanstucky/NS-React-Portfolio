@@ -26,7 +26,7 @@ const theme = {
         return (
             <Grommet theme={theme}>
             <Box pad="medium" align="start">
-              <Card elevation="large" width="medium" border={{"color":"#FCE181"}}>
+              <Card elevation="large" width="medium"  style={{ background: 'rgba(0, 0, 0, 0.5)' }}>
                 <CardBody height="small">
                   <Image
                     fit="cover"
