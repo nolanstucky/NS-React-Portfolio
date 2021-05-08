@@ -36,10 +36,10 @@ function Resume() {
                 gap="3px"
                 responsive="true"
             >
-                <Box gridArea="blank1" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="2000px"></Box>
-                <Box gridArea="blank2" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="2000px"></Box>
+                <Box gridArea="blank1" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="1750px"></Box>
+                <Box gridArea="blank2" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="1750px"></Box>
 
-                <Box gridArea="resume" style={{ background: 'rgba(0, 0, 0, 0.4)' }} height="2000px" align="center" margin={{ "top": "50px",}}>
+                <Box gridArea="resume" style={{ background: 'rgba(0, 0, 0, 0.4)' }} height="1750px" align="center" margin={{ "top": "50px",}}>
 
                     <a href={myPDF} download="Nolan_Stucky_Resume.pdf" style={{ color: '#FCE181', textDecoration: 'inherit' }}> Download Resume </a>
 

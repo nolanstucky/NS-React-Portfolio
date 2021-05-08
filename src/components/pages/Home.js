@@ -63,24 +63,25 @@ function Home() {
                             </Box>
                         </Grid>
                     </Box>
-                    <Box gridArea="blank" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="650px" margin={{ "top": "110px" }} />
+                    <Box gridArea="blank" style={{ background: 'rgba(0, 0, 0, 0.3)' }} height="725px" margin={{ "top": "110px" }} />
                     <Box gridArea="blank2" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "110px" }} />
                     <Box gridArea="about" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "110px" }}>
                         <Avatar size="180px" src={nolanIcon} margin={{ "top": "25px" }} />
                         <Heading color="white">Let me <span style={{ color: "#FCE181" }}>introduce</span> myself</Heading>
                         <Box align="start" margin={{"left":"50pxnp"}}>
-                            <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}>I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
+                            <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I have a passion for learning especially when it comes to things that interest me.</Text>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span></Text>
-                            <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
+                            <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> Always trying to create aesthetically pleasing applications for users to enjoy.  </Text>
+                            <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
                             <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I also love to snowboard and hope that you enjoy this serene background as much as I do!</Text>
                             
                         </Box>
 
                     </Box>
 
-                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }}>
-                        <Box margin={{ "top": "25px" }} align="center">
+                    <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }} height="500px">
+                        <Box margin={{ "top": "15px" }} align="center">
                             <Heading color="white"><span style={{ color: "#FCE181" }}>Languages</span> and <span style={{ color: "#FCE181" }}>Technologies</span></Heading>
                             
                         </Box>

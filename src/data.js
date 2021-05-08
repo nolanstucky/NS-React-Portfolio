@@ -4,14 +4,16 @@ const projectData = [
         image: "https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/check-your-fridge.png?raw=true",
         description: "Check Your Fridge creates a database of food that you have in your fridge. Using Spoonacular API, you can find recipes that use specific ingredients to help you use your food before it expires",
         deployedLink: "https://cryptic-shore-39350.herokuapp.com/",
-        githubLink: "https://github.com/lbalbrecht/check-your-fridge"
+        githubLink: "https://github.com/lbalbrecht/check-your-fridge",
+        technologies: "Node, Express, MySQL, Sequelize, Node Handlebars, Materialize, SpoonacularApi."
     },
     {
         projectTitle: "PokeBatEx",
         image: "https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/pokebatex.png?raw=true",
         description: "Have you ever felt like you suck at pokemon battles? Then you should use PokeBatEx, a pokemon type trainer to learn the type advantages of pokemon while having fun!",
         deployedLink: "https://tyrannofloresrex.github.io/PokeBatEx/",
-        githubLink: "https://github.com/nolanstucky/PokeBatEx"
+        githubLink: "https://github.com/nolanstucky/PokeBatEx",
+        technologies: "Javascript, CSS, HTML, PokeApi, NesCSS."
     },
     {
         projectTitle: "Note Taker",
@@ -25,7 +27,8 @@ const projectData = [
         image: "https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/knowledge4higher.png?raw=true",
         description: "Knowledge4Hire is a website that allowing users to come together to share knowledge and information. Or if someone needs more than just there questions answered they can implore sertified exports on there fields and buy services from them! ",
         deployedLink: "https://knowledge4hire.herokuapp.com/splash",
-        githubLink: "https://github.com/Drantho/KnowledgeForHigher"
+        githubLink: "https://github.com/Drantho/KnowledgeForHigher",
+        technologies: "React, Node, Express, MySQL, Sequelize, Grommet, Cloudinary, Bad-Words, Bycript, JSON Web Tokens."
     },
     {
         projectTitle: "Employee Directory",

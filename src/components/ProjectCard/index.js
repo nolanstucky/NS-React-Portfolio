@@ -5,7 +5,7 @@ import { Github, Heroku } from 'grommet-icons';
 const theme = {
     global: {
       font: {
-        family: `Comic Sans MS, -apple-system,
+        family: `Times New Roman, -apple-system,
            BlinkMacSystemFont, 
            "Segoe UI", 
            Roboto`,
@@ -41,6 +41,7 @@ const theme = {
                   <Paragraph margin={{ top: 'none' }} color="white">
                     {props.props.description}
                   </Paragraph>
+                  <Text color="white" margin={{"bottom":"20px"}}>{props.props.technologies}</Text>
                 </Box>
                 <Box alignContent="center" direction="row">
                   <Button href={props.props.deployedLink}><Heroku/><Text color="white">Deployed Link</Text></Button>
