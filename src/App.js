@@ -11,7 +11,6 @@ function App() {
   return (
     <HashRouter basename="/">
       
-      <Navbar />
       <Box >
       <Switch>
         <Route exact path='/' component={Home} />
