@@ -5,7 +5,9 @@ import Profile from '../profile/index'
 import Particle from '../particles/Particle'
 import Typical from 'react-typical'
 import MediaQuery from 'react-responsive'
+import MobileNavbar from '../mobileNavbar'
 import Navbar from '../navbar';
+
 
 const nolanIcon = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan-picture.png?raw=true';
 
@@ -16,7 +18,7 @@ function Home() {
             <Box height="small" justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }} >
                 <Particle />
             </Box>
-            <MediaQuery minDeviceWidth={1920}>
+            <MediaQuery minWidth={1920}>
                 <Navbar />
                 <Box>
                     {/* <Profile /> */}
@@ -139,13 +141,13 @@ function Home() {
                 </Box>
             </MediaQuery>
 
-            <MediaQuery maxDeviceWidth={1919}>
+            <MediaQuery maxWidth={1919}>
                 <Box>
 
                 </Box>
             </MediaQuery>
-            <MediaQuery minDeviceWidth={360} minDeviceHeight={640} maxDeviceWidth={1919} maxDeviceHeight={1079}>
-                <Navbar />
+            <MediaQuery minWidth={360} minHeight={640} maxWidth={1919} maxHeight={1079}>
+                <MobileNavbar/>
 
                 <Box>
                     <Grid
@@ -187,13 +189,13 @@ function Home() {
                         <Box gridArea="about" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "135px" }}>
                             <Avatar size="180px" src={nolanIcon} margin={{ "top": "30px" }} />
                             <Heading color="white"  size="27px" margin={{ "bottom": "60px"}}>Let me <span style={{ color: "#FCE181" }} >introduce</span> myself</Heading>
-                            <Box align="start" margin={{ "left": "15px"}}>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I have a passion for learning especially when it comes to things that interest me.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span></Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> Always trying to create aesthetically pleasing applications for users to enjoy.  </Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I also love to snowboard and hope that you enjoy this serene background as much as I do!</Text>
+                            <Box align="start" margin={{ "left": "13px"}}>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px", "top":"15px" }} wordBreak="break-word"> I have a passion for learning especially when it comes to things that interest me.</Text>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px", "top":"15px"}} wordBreak="break-word"> Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span></Text>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> Always trying to create aesthetically pleasing applications for users to enjoy.  </Text>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px", "top":"15px"}} wordBreak="break-word"> That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
+                                <Text color="white" size="25px" margin={{ "left": "25px", "right": "25px", "top":"15px" }} wordBreak="break-word"> I also love to snowboard and hope that you enjoy this serene background as much as I do!</Text>
 
                             </Box>
 

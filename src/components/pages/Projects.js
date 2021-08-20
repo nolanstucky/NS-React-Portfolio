@@ -6,6 +6,7 @@ import ProjectCard from '../ProjectCard/index'
 import projectData from '../../data'
 import MediaQuery from 'react-responsive'
 import Navbar from '../navbar';
+import MobileNavbar from '../mobileNavbar'
 
 function Projects() {
   return (
@@ -53,6 +54,9 @@ function Projects() {
                 <Box gridArea="project3">
                   <ProjectCard props={projectData[3]} />
                 </Box>
+                <Box gridArea="project4">
+                    <ProjectCard props={projectData[5]} />
+                </Box>
               </Grid>
             </Box>
           </Box>
@@ -60,7 +64,7 @@ function Projects() {
       </MediaQuery>
 
       <MediaQuery minDeviceWidth={360} minDeviceHeight={640} maxDeviceWidth={1919} maxDeviceHeight={1079}>
-        <Navbar />
+        <MobileNavbar/>
           <Box align="center">
             <Grid
               areas={[
@@ -74,15 +78,16 @@ function Projects() {
 
               <Box gridArea="projects">
                 {/* {projectData.map(data => <ProjectCard props={data} />)} */}
-                <Box margin={{ "top": "25px" }} align="center">
+                <Box margin={{ "top": "50px" }} align="center">
                   <Heading color="white"> My <span style={{ color: "#FCE181" }}>Projects</span></Heading>
                 </Box>
-                <Box margin={{ "top": "125px" }}>
+                <Box margin={{ "top": "115px" }}>
                   <Grid
                     areas={[
                       ['project1'],
                       ['project2'],
-                      ['project3']
+                      ['project3'],
+                      ['project4']
 
                     ]}
                     columns={['flex']}
@@ -97,6 +102,9 @@ function Projects() {
                     </Box>
                     <Box gridArea="project3">
                       <ProjectCard props={projectData[3]} />
+                    </Box>
+                    <Box gridArea="project4">
+                      <ProjectCard props={projectData[5]} />
                     </Box>
                   </Grid>
                 </Box>
