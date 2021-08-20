@@ -144,7 +144,7 @@ function Home() {
 
                 </Box>
             </MediaQuery>
-            <MediaQuery minDeviceWidth={360} minDeviceHeight={640} >
+            <MediaQuery minDeviceWidth={360} minDeviceHeight={640} maxDeviceWidth={1919} maxDeviceHeight={1079}>
                 <Navbar />
 
                 <Box>
@@ -160,7 +160,7 @@ function Home() {
 
                         responsive="true"
                     >
-                        <Box gridArea="main" style={{ background: 'rgba(0, 0, 0, 0.2)' }} pad="small" height="300px" align="center" >
+                        <Box gridArea="main" style={{ background: 'rgba(0, 0, 0, 0.2)' }} pad="small" height="300px" align="center" margin={{"top":"25px"}}>
 
 
                             <Heading color="white" size="50px">Hello there,</Heading>
@@ -184,40 +184,42 @@ function Home() {
                             </Box>
                         </Box>
                         
-                        <Box gridArea="about" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "110px" }}>
-                            <Avatar size="180px" src={nolanIcon} margin={{ "top": "25px" }} />
-                            <Heading color="white"  size="27px">Let me <span style={{ color: "#FCE181" }} >introduce</span> myself</Heading>
-                            <Box align="start" margin={{ "left": "50pxnp" }}>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I have a passion for learning especially when it comes to things that interest me.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span></Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> Always trying to create aesthetically pleasing applications for users to enjoy.  </Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
-                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }}> I also love to snowboard and hope that you enjoy this serene background as much as I do!</Text>
+                        <Box gridArea="about" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "135px" }}>
+                            <Avatar size="180px" src={nolanIcon} margin={{ "top": "30px" }} />
+                            <Heading color="white"  size="27px" margin={{ "bottom": "60px"}}>Let me <span style={{ color: "#FCE181" }} >introduce</span> myself</Heading>
+                            <Box align="start" margin={{ "left": "15px"}}>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.</Text>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I have a passion for learning especially when it comes to things that interest me.</Text>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span></Text>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> Always trying to create aesthetically pleasing applications for users to enjoy.  </Text>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.</Text>
+                                <Text color="white" size="30px" margin={{ "left": "25px", "right": "25px" }} wordBreak="break-word"> I also love to snowboard and hope that you enjoy this serene background as much as I do!</Text>
 
                             </Box>
 
                         </Box>
 
-                        <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }} height="500px" align="center">
+                        <Box gridArea="languages" style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ "top": "3px" }} height="250px" align="center">
                             <Box margin={{ "top": "15px" }} align="center">
                                 <Heading color="white" size="25px"><span style={{ color: "#FCE181" }}>Languages</span> and <span style={{ color: "#FCE181" }}>Technologies</span></Heading>
 
                             </Box>
 
-                            <Box>
+                            <Box margin={{ "left": "27px" }}>
 
                                 <Text color="white" size="20px"><span style={{ color: "#FCE181" }}>Languages:</span> Javascript, HTML, CSS, Typescript, C#, Python, UNIX shell</Text>
                                 <Text color="white" size="20px"><span style={{ color: "#FCE181" }}>Technologies:</span> React, Express, MySql, MongoDb, Node Handlebars,<br /> Unity, Blender, Microsoft Excel</Text>
                             </Box>
                         </Box>
 
-                        <Box gridArea="contact" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "3px" }}>
-                            <Box margin={{ "top": "25px" }} align="start">
-                                <Heading color="white">Contact me <span style={{ color: "#FCE181" }}>here</span></Heading>
+                        <Box gridArea="contact" style={{ background: 'rgba(0, 0, 0, 0.3)' }} align="center" margin={{ "top": "3px" }} height="250px">
+                            <Box margin={{ "top": "25px" }} >
+                                <Box align="center">
+                                <Heading color="white" >Contact me <span style={{ color: "#FCE181" }}>here</span></Heading>
+                                </Box>
                                 <Text color="white" size="25px"><span style={{ color: "#FCE181" }}>Email:</span> Nolan@Stucky.Net</Text>
-                                <Anchor href="https://www.linkedin.com/in/nolan-stucky/" color="white"><Linkedin /> https://www.linkedin.com/in/nolan-stucky/</Anchor>
-                                <Anchor href="https://github.com/nolanstucky?tab=repositories" color="white"> <Github /> https://github.com/nolanstucky?tab=repositories</Anchor>
+                                <Anchor href="https://www.linkedin.com/in/nolan-stucky/" color="white" size="small"><Linkedin /> https://www.linkedin.com/in/nolan-stucky/</Anchor>
+                                <Anchor href="https://github.com/nolanstucky?tab=repositories" color="white" size="small"> <Github /> https://github.com/nolanstucky?tab=repositories</Anchor>
                             </Box>
                         </Box>
 

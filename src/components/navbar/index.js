@@ -32,7 +32,7 @@ class Navbar extends Component {
                         </Anchor>
                     </Box>
 
-                    <Box direction="row" align="center" gap="small" pad="small">
+                    <Box direction="row" align="center" gap="small" pad="small" margin={{"right":"15px"}}>
                         <Anchor>
                         <Link to='/resume' style={{ color: '#FCE181', textDecoration: 'inherit' }}>Resume</Link>
                         </Anchor>
