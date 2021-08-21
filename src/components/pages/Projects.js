@@ -63,7 +63,7 @@ function Projects() {
         </Grid>
       </MediaQuery>
 
-      <MediaQuery minWidth={360} minHeight={640} maxWidth={1919} maxHeight={1079}>
+      <MediaQuery  maxWidth={1919} maxHeight={1079}>
         <MobileNavbar/>
           <Box align="center">
             <Grid
