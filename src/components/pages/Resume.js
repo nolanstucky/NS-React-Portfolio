@@ -3,7 +3,7 @@ import { Grommet, Grid, Box, Stack, Heading, Text, Anchor} from 'grommet';
 import { Link } from "react-router-dom";
 import Particle from '../particles/Particle'
 import myPDF from './Nolan_Stucky_Resume.pdf'
-
+import Navbar from '../navbar';
 
 const customTheme = {
     text: {
@@ -21,10 +21,12 @@ const customTheme = {
 function Resume() {
     return (
         <Grommet theme={customTheme}>
+
         <Stack >
             <Box  justify='evenly' overflow={{ horizontal: 'hidden', vertical: 'hidden' }} >
                 <Particle />
             </Box>
+            <Navbar />
             <Box color="text">
             <Grid
                 areas={[
