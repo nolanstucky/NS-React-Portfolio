@@ -15,7 +15,7 @@ function Projects() {
         <Particle />
       </Box>
 
-      <MediaQuery minDeviceWidth={1920}>
+      <MediaQuery minWidth={1920}>
         <Navbar />
         <Grid
           areas={[
@@ -63,7 +63,7 @@ function Projects() {
         </Grid>
       </MediaQuery>
 
-      <MediaQuery minDeviceWidth={360} minDeviceHeight={640} maxDeviceWidth={1919} maxDeviceHeight={1079}>
+      <MediaQuery minWidth={360} minHeight={640} maxWidth={1919} maxHeight={1079}>
         <MobileNavbar/>
           <Box align="center">
             <Grid
