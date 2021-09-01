@@ -7,10 +7,14 @@ function Particle() {
     <Particles
       params={{
         "background": {
-            "image": "url('https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/backgroundmountain3darker.png?raw=true')"
-            
-    
+            // "image": "url('https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/backgroundmountain3darker.png?raw=true')",
+            "width": 100,
+            "height": 100,
+            "color":{
+              "value": "#0c101e"
+            }
         },
+
         "interactivity": {
           "events": {
             "onClick": {
