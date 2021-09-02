@@ -8,7 +8,7 @@ import Navbar from '../navbar';
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
-const nolanIcon = '../navbar/nolanStucky.jpg'
+const nolanIcon = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan%20stucky.jpg?raw=true'
 
 
 export default function Home() {
@@ -108,13 +108,31 @@ export default function Home() {
 
                             >
                                 <Box ref={myRef} align="center" width="100%" height="100vh">
-                                    
-                                    <Box height="small" width="small">
-                                        <Image
-                                            fit="cover"
-                                            src={nolanIcon}
-                                        />
-                                    </Box>
+
+                                    <Grid
+                                        areas={[
+                                            ['picture','about'],
+                                        ]}
+                                        columns={['flex']}
+                                        rows={['flex']}
+
+                                        responsive="true"
+                                    >
+
+                                        
+
+                                        <Box gridArea="picture" height="medium" width="medium" margin={{top:"250px",right:"100px"}}>
+                                            <Image
+                                                fit="cover"
+                                                src={nolanIcon}
+                                            />
+                                        </Box>
+
+                                        <Box gridArea="about" height="medium" width="medium" margin={{top:"250px",right:"50px"}}>
+
+                                        </Box>
+                                    </Grid>
+
                                 </Box>
                             </motion.div>
 
