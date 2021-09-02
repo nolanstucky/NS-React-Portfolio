@@ -9,7 +9,8 @@ import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
 const nolanSnow = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanSnow.jpg?raw=true'
-const nolanTree = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan%20stucky.jpg?raw=true'
+const nolanTree = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanGrass.JPG?raw=true'
+const nolanDog = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanDog.JPG?raw=true'
 
 export default function Home() {
 
@@ -122,7 +123,7 @@ export default function Home() {
 
 
                                         <Box gridArea="picture" height="375px" width="375px" margin={{ top: "250px", right: "250px" }}>
-                                            <Carousel play={5000} >
+                                            <Carousel play={5000} fill>
                                                 <Image  fill="true" src={nolanSnow} />
                                                 <Image  fill="true" src={nolanTree}  />                                            
                                             </Carousel>
