@@ -1,17 +1,50 @@
-import React from "react";
-import { Main, Grid, Box, Stack, Anchor, Avatar, Text, Heading, Paragraph} from 'grommet';
+import { React, useEffect, useState, useRef } from 'react'
+import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Paragraph } from 'grommet';
 import { Github, Linkedin } from 'grommet-icons';
-import Profile from '../profile/index'
 import Particle from '../particles/Particle'
-import Typical from 'react-typical'
 import MediaQuery from 'react-responsive'
 import MobileNavbar from '../mobileNavbar'
 import Navbar from '../navbar';
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from 'react-intersection-observer'
+
+const nolanIcon = '../navbar/nolanStucky.jpg'
 
 
-const nolanIcon = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan-picture.png?raw=true';
+export default function Home() {
 
-function TestHome() {
+    const handleScroll = (e) => {
+        const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+        if (bottom) {
+            console.log("bottom")
+        }
+    }
+
+    const controls = useAnimation();
+
+    const [ref, inView] = useInView({
+        threshold: 0,
+        trackVisibility: true,
+        delay: 100,
+    });
+
+
+    console.log(inView)
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+        if (!inView) {
+            controls.start("hidden");
+        }
+    }, [controls, inView]);
+
+
+    const myRef = useRef(null)
+
+    const executeScroll = () => myRef.current.scrollIntoView()
+
     return (
 
         <Stack>
@@ -32,8 +65,8 @@ function TestHome() {
                 </Box>
             </MediaQuery>
 
-            <MediaQuery  maxWidth={5000} maxHeight={5000}>
-                <MobileNavbar/>
+            <MediaQuery maxWidth={5000} maxHeight={5000}>
+                <MobileNavbar />
 
                 <Box>
                     <Grid
@@ -44,14 +77,47 @@ function TestHome() {
                             ['contact']
                         ]}
                         columns={['flex']}
-                        rows={['small']}
+                        rows={['flex']}
 
                         responsive="true"
                     >
-                        <Box gridArea="main" align="center" width="100%" height="100vh" border={{color:"white","size":"large"}} >
-                            <Heading color="white" size="125px">Hello there!</Heading>
-                            <Heading color="white" size="125px">I'm</Heading>
-                            <Heading color="#FCE181" size="125px">Nolan Stucky!</Heading>
+                        <Box gridArea="main">
+                            <motion.div
+                            // animate={{ rotateX: 90, scale: 0.9}}
+                            // transition={{ duration: 2}}
+
+                            >
+                                <Box onScroll={handleScroll} align="center" width="100%" height="100vh">
+                                    <Heading color="white" size="125px" margin={{ top: "200px", bottom: "-100px" }}>Hello there!</Heading>
+                                    <Heading color="white" size="125px" margin={{ bottom: "-100px" }}>I'm</Heading>
+                                    <Heading color="#FCE181" size="125px">Nolan Stucky!</Heading>
+
+                                    <Anchor onClick={executeScroll} color="white"><Text size="25px">Learn More About Me</Text></Anchor>
+                                </Box>
+                            </motion.div>
+
+                            <motion.div
+                                ref={ref}
+                                animate={controls}
+                                initial="hidden"
+                                transition={{ duration: 0.3 }}
+                                variants={{
+                                    visible: { opacity: 1, scale: 1 },
+                                    hidden: { opacity: 0, scale: 0 }
+                                }}
+
+                            >
+                                <Box ref={myRef} align="center" width="100%" height="100vh">
+                                    
+                                    <Box height="small" width="small">
+                                        <Image
+                                            fit="cover"
+                                            src={nolanIcon}
+                                        />
+                                    </Box>
+                                </Box>
+                            </motion.div>
+
                         </Box>
 
                     </Grid>
@@ -63,4 +129,3 @@ function TestHome() {
     );
 }
 
-export default TestHome;
