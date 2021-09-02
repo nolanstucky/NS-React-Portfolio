@@ -1,5 +1,5 @@
 import { React, useEffect, useState, useRef } from 'react'
-import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Paragraph } from 'grommet';
+import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Carousel } from 'grommet';
 import { Github, Linkedin } from 'grommet-icons';
 import Particle from '../particles/Particle'
 import MediaQuery from 'react-responsive'
@@ -8,8 +8,8 @@ import Navbar from '../navbar';
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
 
-const nolanIcon = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan%20stucky.jpg?raw=true'
-
+const nolanSnow = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanSnow.jpg?raw=true'
+const nolanTree = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolan%20stucky.jpg?raw=true'
 
 export default function Home() {
 
@@ -111,7 +111,7 @@ export default function Home() {
 
                                     <Grid
                                         areas={[
-                                            ['picture','about'],
+                                            ['picture', 'about'],
                                         ]}
                                         columns={['flex']}
                                         rows={['flex']}
@@ -119,16 +119,16 @@ export default function Home() {
                                         responsive="true"
                                     >
 
-                                        
 
-                                        <Box gridArea="picture" height="medium" width="medium" margin={{top:"250px",right:"100px"}}>
-                                            <Image
-                                                fit="cover"
-                                                src={nolanIcon}
-                                            />
+
+                                        <Box gridArea="picture" height="375px" width="375px" margin={{ top: "250px", right: "250px" }}>
+                                            <Carousel play={5000} >
+                                                <Image  fill="true" src={nolanSnow} />
+                                                <Image  fill="true" src={nolanTree}  />                                            
+                                            </Carousel>
                                         </Box>
 
-                                        <Box gridArea="about" height="medium" width="medium" margin={{top:"250px",right:"50px"}}>
+                                        <Box gridArea="about" height="medium" width="medium" margin={{ top: "250px", right: "50px" }}>
 
                                         </Box>
                                     </Grid>
