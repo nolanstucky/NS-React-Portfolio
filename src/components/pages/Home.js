@@ -1,6 +1,6 @@
 import { React, useEffect, useState, useRef } from 'react'
-import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Carousel, Paragraph, Layer, Collapsible} from 'grommet';
-import { Github, Linkedin } from 'grommet-icons';
+import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Carousel, Paragraph, Layer, Collapsible, Button } from 'grommet';
+import { Github, Heroku } from 'grommet-icons';
 import Particle from '../particles/Particle'
 import MediaQuery from 'react-responsive'
 import MobileNavbar from '../mobileNavbar'
@@ -435,7 +435,7 @@ export default function Home() {
 
                         </Box>
 
-                        <Box gridArea="about" ref={myAboutMe} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="150vh">
+                        <Box gridArea="about" ref={myAboutMe} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="130vh">
                             <motion.div
                             // ref={ref}
                             // animate={controls}
@@ -542,7 +542,7 @@ export default function Home() {
                                         </Box>
 
                                         <Box gridArea="project2" pad="medium" label="show2" onClick={() => setOpen2(!open2)}>
-          
+
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -554,12 +554,16 @@ export default function Home() {
                                                     <Paragraph margin="medium" color="white">
                                                         {projectData[1].description}
                                                     </Paragraph>
+                                                    <Box align="center">
+                                                    <Button href={projectData[1].deployedLink}><Heroku /><Text color="white">Deployed Link</Text></Button>
+                                                    <Button href={projectData[1].githubLink} margin={{ left: "px", }}><Github /><Text color="white">Github Link</Text></Button>
+                                                    </Box>
                                                 </Collapsible>
                                             </motion.div>
                                         </Box>
 
                                         <Box gridArea="project3" pad="medium" label="show3" onClick={() => setOpen3(!open3)}>
-                     
+
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -575,8 +579,8 @@ export default function Home() {
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project4" pad="medium" label="show4"  onClick={() => setOpen4(!open4)}>
-                 
+                                        <Box gridArea="project4" pad="medium" label="show4" onClick={() => setOpen4(!open4)}>
+
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -592,8 +596,8 @@ export default function Home() {
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project5" pad="medium" label="show5"  onClick={() => setOpen5(!open5)}>
-                 
+                                        <Box gridArea="project5" pad="medium" label="show5" onClick={() => setOpen5(!open5)}>
+
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
