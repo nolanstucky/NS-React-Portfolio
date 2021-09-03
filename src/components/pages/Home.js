@@ -471,7 +471,7 @@ export default function Home() {
                                             </Carousel>
                                         </Box>
 
-                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px" }}>
+                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px", bottom:"50px" }}>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
                                             </Paragraph>
@@ -486,7 +486,7 @@ export default function Home() {
                                             </Paragraph>
                                         </Box>
 
-                                        <Box align="center" gridArea="link" margin={{ top: "350px", right: "0px" }}>
+                                        <Box align="center" gridArea="link" margin={{ top: "300px", right: "0px" }}>
                                             <Anchor onClick={executeScrollToProjects} color="white"><Text size="20px">See my Projects!</Text></Anchor>
                                         </Box>
                                     </Grid>
