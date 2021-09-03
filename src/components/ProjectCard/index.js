@@ -22,7 +22,7 @@ const theme = {
 
   export default function ProjectCard(props) {
         console.log("logging projectcard object")
-        console.log(props.props);
+        
         return (
             <Grommet theme={theme}>
             <Box pad="medium" align="start">

@@ -7,10 +7,29 @@ import Resume from './components/pages/Resume'
 import './App.css';
 import Footbar from './components/Footer/index'
 import { Box} from 'grommet';
+import { Grommet } from 'grommet';
+
+const globalGrommetTheme = {
+  global: {
+    focus: {
+      border: {
+        color :'rgba(0,0,0,0)'
+      }
+    },
+    button: {
+      active: {
+        background: {
+          color: '#FCE181'
+        }
+      }
+    }
+  }
+}
+
 function App() {
   return (
     <HashRouter basename="/">
-      
+      <Grommet theme={globalGrommetTheme}>
       <Box >
       <Switch>
         <Route exact path='/' component={Home} />
@@ -19,6 +38,7 @@ function App() {
       </Switch>
       </Box>
       {/* <Footbar/> */}
+      </Grommet>
     </HashRouter>
   );
 }
