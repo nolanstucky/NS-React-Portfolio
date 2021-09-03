@@ -27,7 +27,7 @@ export default function ProjectPictureCard(props) {
     return (
         <Grommet theme={theme}>
             <Box>
-                <Card width="450px" >
+                <Card width="400px" >
                     {/* Stacked CardBody and CardHeader on top of each other 
                             in that order */}
                     <Stack anchor="bottom-left">
@@ -42,7 +42,7 @@ export default function ProjectPictureCard(props) {
                             pad={{ horizontal: 'small', vertical: 'small' }}
                             // https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4#all-hex-value-from-100-to-0-alpha
                             background="#000000A0"
-                            width="450px"
+                            width="425px"
                             justify="start"
                         >
 

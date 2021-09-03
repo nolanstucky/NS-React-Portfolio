@@ -1,5 +1,5 @@
 import { React, useEffect, useState, useRef } from 'react'
-import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Carousel, Paragraph, Layer, Button } from 'grommet';
+import { Main, Grid, Box, Stack, Anchor, Image, Text, Heading, Carousel, Paragraph, Layer, Collapsible} from 'grommet';
 import { Github, Linkedin } from 'grommet-icons';
 import Particle from '../particles/Particle'
 import MediaQuery from 'react-responsive'
@@ -12,12 +12,15 @@ import ProjectCard from '../ProjectCard/index'
 import projectData from '../../data'
 import ProjectPictureCard from '../ProjectPictureCard';
 import ProjectModal from '../ProjectModal';
+import ProjectModalMobile from '../ProjectModalMobile';
 
 const nolanSnow = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanSnow.jpg?raw=true'
 const nolanTree = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanTree.jpg?raw=true'
 const nolanDog = 'https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/nolanDog.JPG?raw=true'
 
 export default function Home() {
+
+    const data = projectData
 
     const handleScroll = (e) => {
         const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
@@ -27,15 +30,31 @@ export default function Home() {
     }
 
     const controls = useAnimation();
+    const controlsTitle = useAnimation();
+    const controlsProjects = useAnimation();
 
-    const [ref, inView] = useInView({
+    // controller for title animation
+    const [refTitle, inViewTitle] = useInView({
         threshold: 0,
         trackVisibility: true,
         delay: 100,
     });
 
+    useEffect(() => {
+        if (inViewTitle) {
+            controlsTitle.start("visible");
+        }
+        if (!inViewTitle) {
+            controlsTitle.start("hidden");
+        }
+    }, [controlsTitle, inViewTitle]);
 
-    console.log(inView)
+    // controller for about me animation
+    const [ref, inView] = useInView({
+        threshold: 0,
+        trackVisibility: true,
+        delay: 100,
+    });
 
     useEffect(() => {
         if (inView) {
@@ -46,7 +65,24 @@ export default function Home() {
         }
     }, [controls, inView]);
 
+    // controller for project animation
+    const [refProjects, inViewProjects] = useInView({
+        threshold: 0,
+        trackVisibility: true,
+        delay: 100,
+    });
 
+    useEffect(() => {
+        if (inViewProjects) {
+            controlsProjects.start("visible");
+        }
+        if (!inViewProjects) {
+            controlsProjects.start("hidden");
+        }
+    }, [controlsProjects, inViewProjects]);
+
+    // variables for click to scroll 
+    const myTitle = useRef(null)
     const myAboutMe = useRef(null)
     const myProjects = useRef(null)
 
@@ -54,9 +90,19 @@ export default function Home() {
     const executeScrollToAboutMe = () => myAboutMe.current.scrollIntoView()
     const executeScrollToProjects = () => myProjects.current.scrollIntoView()
 
-    const [show, setShow] = useState();
+    // modal hooks 
+    const [show1, setShow1] = useState();
+    const [show2, setShow2] = useState();
+    const [show3, setShow3] = useState();
+    const [show4, setShow4] = useState();
+    const [show5, setShow5] = useState();
 
-
+    //footer hooks 
+    const [open1, setOpen1] = useState();
+    const [open2, setOpen2] = useState();
+    const [open3, setOpen3] = useState();
+    const [open4, setOpen4] = useState();
+    const [open5, setOpen5] = useState();
 
     return (
 
@@ -94,10 +140,16 @@ export default function Home() {
 
                         responsive="true"
                     >
-                        <Box gridArea="main" width="100%" height="100vh" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+                        <Box gridArea="main" ref={myTitle} width="100%" height="100vh" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
                             <motion.div
-                            // animate={{ rotateX: 90, scale: 0.9}}
-                            // transition={{ duration: 2}}
+                                ref={refTitle}
+                                animate={controlsTitle}
+                                initial="hidden"
+                                transition={{ duration: 0.3 }}
+                                variants={{
+                                    visible: { opacity: 1, scale: 1 },
+                                    hidden: { opacity: 0, scale: 0 }
+                                }}
 
                             >
                                 <Box onScroll={handleScroll} align="center">
@@ -117,7 +169,7 @@ export default function Home() {
                                 ref={ref}
                                 animate={controls}
                                 initial="hidden"
-                                transition={{ duration: 0.3 }}
+                                transition={{ duration: 0.1 }}
                                 variants={{
                                     visible: { opacity: 1, scale: 1 },
                                     hidden: { opacity: 0, scale: 0 }
@@ -172,7 +224,14 @@ export default function Home() {
                         <MediaQuery minWidth={1531} minHeight={863}>
                             <Box gridArea="projects" ref={myProjects} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="100vh">
                                 <motion.div
-
+                                    ref={refProjects}
+                                    animate={controlsProjects}
+                                    initial="hidden"
+                                    transition={{ duration: 0.1 }}
+                                    variants={{
+                                        visible: { opacity: 1, scale: 1 },
+                                        hidden: { opacity: 0, scale: 0 }
+                                    }}
                                 >
                                     <Box margin={{ top: "100px" }} align="center">
 
@@ -186,14 +245,15 @@ export default function Home() {
 
                                             responsive="true"
                                         >
-                                            <Box gridArea="project1" pad="medium" label="show" onClick={() => setShow(true)} >
-                                                {show && (
+                                            <Box gridArea="project1" pad="medium" label="show1" onClick={() => setShow1(true)} >
+                                                {show1 && (
                                                     <Layer
-                                                        onEsc={() => setShow(false)}
-                                                        onClickOutside={() => setShow(false)}
+                                                        onEsc={() => setShow1(false)}
+                                                        onClickOutside={() => setShow1(false)}
+                                                        background={{ opacity: "50%", color: "#0c101e" }}
+                                                        round="medium"
                                                     >
-                                                        <ProjectModal />
-
+                                                        <ProjectModal props={projectData[0]} />
                                                     </Layer>
                                                 )}
 
@@ -207,13 +267,16 @@ export default function Home() {
                                                 </motion.div>
                                             </Box>
 
-                                            <Box gridArea="project2" pad="medium" label="show" onClick={() => setShow(true)}>
-                                                {show && (
+                                            <Box gridArea="project2" pad="medium" label="show2" onClick={() => setShow2(true)}>
+                                                {show2 && (
                                                     <Layer
-                                                        onEsc={() => setShow(false)}
-                                                        onClickOutside={() => setShow(false)}
+                                                        onEsc={() => setShow2(false)}
+                                                        onClickOutside={() => setShow2(false)}
+                                                        round="medium"
+                                                        background={{ opacity: "50%", color: "#0c101e" }}
+                                                        round="medium"
                                                     >
-                                                        <ProjectModal />
+                                                        <ProjectModal props={projectData[1]} />
 
                                                     </Layer>
                                                 )}
@@ -228,13 +291,15 @@ export default function Home() {
                                                 </motion.div>
                                             </Box>
 
-                                            <Box gridArea="project3" pad="medium" label="show" onClick={() => setShow(true)}>
-                                                {show && (
+                                            <Box gridArea="project3" pad="medium" label="show3" onClick={() => setShow3(true)}>
+                                                {show3 && (
                                                     <Layer
-                                                        onEsc={() => setShow(false)}
-                                                        onClickOutside={() => setShow(false)}
+                                                        onEsc={() => setShow3(false)}
+                                                        onClickOutside={() => setShow3(false)}
+                                                        background={{ opacity: "50%", color: "#0c101e" }}
+                                                        round="medium"
                                                     >
-                                                        <ProjectModal />
+                                                        <ProjectModal props={projectData[3]} />
 
                                                     </Layer>
                                                 )}
@@ -248,13 +313,15 @@ export default function Home() {
                                                 </motion.div>
                                             </Box>
 
-                                            <Box gridArea="project4" pad="medium" label="show" onClick={() => setShow(true)}>
-                                                {show && (
+                                            <Box gridArea="project4" pad="medium" label="show4" onClick={() => setShow4(true)}>
+                                                {show4 && (
                                                     <Layer
-                                                        onEsc={() => setShow(false)}
-                                                        onClickOutside={() => setShow(false)}
+                                                        onEsc={() => setShow4(false)}
+                                                        onClickOutside={() => setShow4(false)}
+                                                        background={{ opacity: "50%", color: "#0c101e" }}
+                                                        round="medium"
                                                     >
-                                                        <ProjectModal />
+                                                        <ProjectModal props={projectData[5]} />
 
                                                     </Layer>
                                                 )}
@@ -268,13 +335,15 @@ export default function Home() {
                                                 </motion.div>
                                             </Box>
 
-                                            <Box gridArea="project5" pad="medium" label="show" onClick={() => setShow(true)}>
-                                                {show && (
+                                            <Box gridArea="project5" pad="medium" label="show5" onClick={() => setShow5(true)}>
+                                                {show5 && (
                                                     <Layer
-                                                        onEsc={() => setShow(false)}
-                                                        onClickOutside={() => setShow(false)}
+                                                        onEsc={() => setShow5(false)}
+                                                        onClickOutside={() => setShow5(false)}
+                                                        background={{ opacity: "50%", color: "#0c101e" }}
+                                                        round="medium"
                                                     >
-                                                        <ProjectModal />
+                                                        <ProjectModal props={projectData[5]} />
 
                                                     </Layer>
                                                 )}
@@ -344,8 +413,14 @@ export default function Home() {
                     >
                         <Box gridArea="main" width="100%" height="100vh" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
                             <motion.div
-                            // animate={{ rotateX: 90, scale: 0.9}}
-                            // transition={{ duration: 2}}
+                                ref={refTitle}
+                                animate={controlsTitle}
+                                initial="hidden"
+                                transition={{ duration: 0.3 }}
+                                variants={{
+                                    visible: { opacity: 1, scale: 1 },
+                                    hidden: { opacity: 0, scale: 0 }
+                                }}
 
                             >
                                 <Box onScroll={handleScroll} align="center">
@@ -362,22 +437,23 @@ export default function Home() {
 
                         <Box gridArea="about" ref={myAboutMe} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="150vh">
                             <motion.div
-                                ref={ref}
-                                animate={controls}
-                                initial="hidden"
-                                transition={{ duration: 0.3 }}
-                                variants={{
-                                    visible: { opacity: 1, scale: 1 },
-                                    hidden: { opacity: 0, scale: 0 }
-                                }}
+                            // ref={ref}
+                            // animate={controls}
+                            // initial="hidden"
+                            // transition={{ duration: 0.3 }}
+                            // variants={{
+                            //     visible: { opacity: 1, scale: 1 },
+                            //     hidden: { opacity: 0, scale: 0 }
+                            // }}
 
                             >
-                                <Box align="center" >
+                                <Box align="center">
 
                                     <Grid
                                         areas={[
                                             ['picture'],
-                                            ['about']
+                                            ['about'],
+                                            ['link']
                                         ]}
                                         columns={['flex']}
                                         rows={['flex']}
@@ -387,7 +463,7 @@ export default function Home() {
 
 
 
-                                        <Box gridArea="picture" height="250px" width="250px" margin={{ top: "50px", right: "0px", left: "75px" }}>
+                                        <Box gridArea="picture" height="250px" width="250px" margin={{ top: "50px", right: "0px" }}>
                                             <Carousel play={5000} >
                                                 <Image fill="true" src={nolanSnow} />
                                                 <Image fill="true" src={nolanTree} />
@@ -395,21 +471,23 @@ export default function Home() {
                                             </Carousel>
                                         </Box>
 
-                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", right: "-50px" }}>
+                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px" }}>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
                                             </Paragraph>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                                I have a passion for learning especially when it comes to things that interest me.
                                             </Paragraph>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                                Always trying to create aesthetically pleasing applications for users to enjoy. That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.
                                             </Paragraph>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                                I also love to snowboard and hope that you enjoy this serene background as much as I do!
                                             </Paragraph>
+                                        </Box>
 
-                                            <Anchor onClick={executeScrollToProjects} color="white"><Text size="25px">See my Projects!</Text></Anchor>
+                                        <Box align="center" gridArea="link" margin={{ top: "350px", right: "0px" }}>
+                                            <Anchor onClick={executeScrollToProjects} color="white"><Text size="20px">See my Projects!</Text></Anchor>
                                         </Box>
                                     </Grid>
 
@@ -421,7 +499,14 @@ export default function Home() {
 
                         <Box gridArea="projects" ref={myProjects} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="100vh">
                             <motion.div
-
+                            // ref={refProjects}
+                            // animate={controlsProjects}
+                            // initial="visible"
+                            // transition={{ duration: 0.1 }}
+                            // variants={{
+                            //     visible: { opacity: 1, scale: 1 },
+                            //     hidden: { opacity: 0, scale: 0 }
+                            // }}
                             >
                                 <Box margin={{ top: "100px" }} align="center">
 
@@ -438,16 +523,7 @@ export default function Home() {
 
                                         responsive="true"
                                     >
-                                        <Box gridArea="project1" pad="medium" label="show" onClick={() => setShow(true)} >
-                                            {show && (
-                                                <Layer
-                                                    onEsc={() => setShow(false)}
-                                                    onClickOutside={() => setShow(false)}
-                                                >
-                                                    <ProjectModal />
-
-                                                </Layer>
-                                            )}
+                                        <Box gridArea="project1" pad="medium" label="show1" onClick={() => setOpen1(!open1)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -456,20 +532,17 @@ export default function Home() {
 
                                             >
                                                 <ProjectPictureCard props={projectData[0]} />
+                                                <Collapsible open={open1}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[0].description}
+                                                    </Paragraph>
+                                                </Collapsible>
+
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project2" pad="medium" label="show" onClick={() => setShow(true)}>
-                                            {show && (
-                                                <Layer
-                                                    onEsc={() => setShow(false)}
-                                                    onClickOutside={() => setShow(false)}
-                                                >
-                                                    <ProjectModal />
-
-                                                </Layer>
-                                            )}
-
+                                        <Box gridArea="project2" pad="medium" label="show2" onClick={() => setOpen2(!open2)}>
+          
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -477,19 +550,16 @@ export default function Home() {
 
                                             >
                                                 <ProjectPictureCard props={projectData[1]} />
+                                                <Collapsible open={open2}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[1].description}
+                                                    </Paragraph>
+                                                </Collapsible>
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project3" pad="medium" label="show" onClick={() => setShow(true)}>
-                                            {show && (
-                                                <Layer
-                                                    onEsc={() => setShow(false)}
-                                                    onClickOutside={() => setShow(false)}
-                                                >
-                                                    <ProjectModal />
-
-                                                </Layer>
-                                            )}
+                                        <Box gridArea="project3" pad="medium" label="show3" onClick={() => setOpen3(!open3)}>
+                     
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -497,19 +567,16 @@ export default function Home() {
 
                                             >
                                                 <ProjectPictureCard props={projectData[3]} />
+                                                <Collapsible open={open3}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[3].description}
+                                                    </Paragraph>
+                                                </Collapsible>
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project4" pad="medium" label="show" onClick={() => setShow(true)}>
-                                            {show && (
-                                                <Layer
-                                                    onEsc={() => setShow(false)}
-                                                    onClickOutside={() => setShow(false)}
-                                                >
-                                                    <ProjectModal />
-
-                                                </Layer>
-                                            )}
+                                        <Box gridArea="project4" pad="medium" label="show4"  onClick={() => setOpen4(!open4)}>
+                 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -517,19 +584,16 @@ export default function Home() {
 
                                             >
                                                 <ProjectPictureCard props={projectData[5]} />
+                                                <Collapsible open={open4}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[4].description}
+                                                    </Paragraph>
+                                                </Collapsible>
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project5" pad="medium" label="show" onClick={() => setShow(true)}>
-                                            {show && (
-                                                <Layer
-                                                    onEsc={() => setShow(false)}
-                                                    onClickOutside={() => setShow(false)}
-                                                >
-                                                    <ProjectModal />
-
-                                                </Layer>
-                                            )}
+                                        <Box gridArea="project5" pad="medium" label="show5"  onClick={() => setOpen5(!open5)}>
+                 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
                                                 onHoverStart={() => console.log('Hover starts')}
@@ -537,33 +601,13 @@ export default function Home() {
 
                                             >
                                                 <ProjectPictureCard props={projectData[5]} />
+                                                <Collapsible open={open5}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[5].description}
+                                                    </Paragraph>
+                                                </Collapsible>
                                             </motion.div>
                                         </Box>
-                                        {/* 
-                                            <motion.div
-                                            whileHover={{ scale: 1.2 }}
-                                            onHoverStart={() => console.log('Hover starts')}
-                                            onHoverEnd={e => {}}
-                                
-                                            >
-
-                                                <Box width="200px" height="200px">
-                                                    <Image fill="true" src={nolanSnow}  label="show" onClick={() => setShow(true)}/>
-                                                    {show && (
-                                                        <Layer
-                                                            onEsc={() => setShow(false)}
-                                                            onClickOutside={() => setShow(false)}
-                                                        >
-                                                            <Box width="50vw" height="50vh">
-                                                                
-                                                            </Box>
-                    
-                                                        </Layer>
-                                                    )}
-                                                </Box>
-                                            </motion.div> */}
-
-
 
                                     </Grid>
 
