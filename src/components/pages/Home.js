@@ -7,7 +7,7 @@ import MobileNavbar from '../mobileNavbar'
 import Navbar from '../navbar';
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from 'react-intersection-observer'
-
+import Typical from 'react-typical'
 import ProjectCard from '../ProjectCard/index'
 import projectData from '../../data'
 import ProjectPictureCard from '../ProjectPictureCard';
@@ -196,11 +196,26 @@ export default function Home() {
                                                 <Image fill="true" src={nolanTree} />
                                                 <Image fill="true" src={nolanDog} />
                                             </Carousel>
+                                            <Box align="center">
+                                                <Text color="#FCE181">
+                                                <Typical
+                                                    steps={[
+                                                        'Front End Developer', 15000,
+                                                        'Back End Developer', 15000,
+                                                        'Software Developer', 15000,
+                                                        'Game Designer', 15000,
+                                                    ]}
+                                                    loop={Infinity}
+                                                    wrapper="h1"
+                                                    color="#FCE181"
+                                                />
+                                                </Text>
+                                            </Box>
                                         </Box>
 
                                         <Box gridArea="about" height="medium" width="medium" margin={{ top: "250px", right: "50px" }}>
                                             <Paragraph margin={{ "left": "-50px", }} color="white">
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                                I am a software developer that has been 
                                             </Paragraph>
                                             <Paragraph margin={{ "left": "-50px", }} color="white">
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
@@ -211,8 +226,9 @@ export default function Home() {
                                             <Paragraph margin={{ "left": "-50px", }} color="white">
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
                                             </Paragraph>
-
-                                            <Anchor onClick={executeScrollToProjects} color="white"><Text size="25px">See my Projects!</Text></Anchor>
+                                            <Box margin={{left:"50px"}}>
+                                                <Anchor onClick={executeScrollToProjects} color="white"><Text size="25px">See my Projects!</Text></Anchor>
+                                            </Box>
                                         </Box>
                                     </Grid>
 
@@ -395,7 +411,7 @@ export default function Home() {
 
             </MediaQuery>
 
-            <MediaQuery maxWidth={1531} >
+            <MediaQuery maxWidth={1531} minHeight={725}>
                 <MobileNavbar />
 
                 <Box>
@@ -453,7 +469,7 @@ export default function Home() {
                                         areas={[
                                             ['picture'],
                                             ['about'],
-                                            ['link']
+
                                         ]}
                                         columns={['flex']}
                                         rows={['flex']}
@@ -471,7 +487,7 @@ export default function Home() {
                                             </Carousel>
                                         </Box>
 
-                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px", bottom:"50px" }}>
+                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px", bottom: "50px" }}>
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
                                             </Paragraph>
@@ -484,10 +500,11 @@ export default function Home() {
                                             <Paragraph color="white" margin={{ right: "-175px" }}>
                                                 I also love to snowboard and hope that you enjoy this serene background as much as I do!
                                             </Paragraph>
-                                        </Box>
 
-                                        <Box align="center" gridArea="link" margin={{ top: "300px", right: "0px" }}>
-                                            <Anchor onClick={executeScrollToProjects} color="white"><Text size="20px">See my Projects!</Text></Anchor>
+                                            <Box>
+                                                <Anchor onClick={executeScrollToProjects} color="white"><Text size="20px">See my Projects!</Text></Anchor>
+                                            </Box>
+
                                         </Box>
                                     </Grid>
 
@@ -523,7 +540,7 @@ export default function Home() {
 
                                         responsive="true"
                                     >
-                                        <Box gridArea="project1" pad="medium" label="show1" onClick={() => setOpen1(!open1)}>
+                                        <Box gridArea="project1" pad="large" label="show1" onClick={() => setOpen1(!open1)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -541,7 +558,7 @@ export default function Home() {
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project2" pad="medium" label="show2" onClick={() => setOpen2(!open2)}>
+                                        <Box gridArea="project2" pad="large" label="show2" onClick={() => setOpen2(!open2)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -555,14 +572,14 @@ export default function Home() {
                                                         {projectData[1].description}
                                                     </Paragraph>
                                                     <Box align="center">
-                                                    <Button href={projectData[1].deployedLink}><Heroku /><Text color="white">Deployed Link</Text></Button>
-                                                    <Button href={projectData[1].githubLink} margin={{ left: "px", }}><Github /><Text color="white">Github Link</Text></Button>
+                                                        <Button href={projectData[1].deployedLink}><Heroku /><Text color="white">Deployed Link</Text></Button>
+                                                        <Button href={projectData[1].githubLink} margin={{ left: "px", }}><Github /><Text color="white">Github Link</Text></Button>
                                                     </Box>
                                                 </Collapsible>
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project3" pad="medium" label="show3" onClick={() => setOpen3(!open3)}>
+                                        <Box gridArea="project3" pad="large" label="show3" onClick={() => setOpen3(!open3)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -579,7 +596,7 @@ export default function Home() {
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project4" pad="medium" label="show4" onClick={() => setOpen4(!open4)}>
+                                        <Box gridArea="project4" pad="large" label="show4" onClick={() => setOpen4(!open4)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -596,7 +613,7 @@ export default function Home() {
                                             </motion.div>
                                         </Box>
 
-                                        <Box gridArea="project5" pad="medium" label="show5" onClick={() => setOpen5(!open5)}>
+                                        <Box gridArea="project5" pad="large" label="show5" onClick={() => setOpen5(!open5)}>
 
                                             <motion.div
                                                 whileHover={{ scale: 1.1 }}
@@ -612,7 +629,109 @@ export default function Home() {
                                                 </Collapsible>
                                             </motion.div>
                                         </Box>
+                                    </Grid>
+                                </Box>
+                            </motion.div>
+                        </Box>
+                    </Grid>
+                </Box>
+            </MediaQuery>
 
+            <MediaQuery maxHeight={724} >
+                <MobileNavbar />
+
+                <Box>
+                    <Grid
+                        areas={[
+                            ['main'],
+                            ['about'],
+                            ['projects'],
+                            ['contact']
+                        ]}
+                        columns={['flex']}
+                        rows={['flex']}
+
+                        responsive="true"
+                    >
+                        <Box gridArea="main" width="100%" height="100vh" style={{ background: 'rgba(0, 0, 0, 0.3)' }}>
+                            <motion.div
+                                ref={refTitle}
+                                animate={controlsTitle}
+                                initial="hidden"
+                                transition={{ duration: 0.3 }}
+                                variants={{
+                                    visible: { opacity: 1, scale: 1 },
+                                    hidden: { opacity: 0, scale: 0 }
+                                }}
+
+                            >
+                                <Box onScroll={handleScroll} align="center">
+                                    <Heading color="white" size="45px" margin={{ top: "200px", bottom: "-1px" }}>Hello there!</Heading>
+                                    <Heading color="white" size="45px" margin={{ bottom: "-1px" }}>I'm</Heading>
+                                    <Heading color="#FCE181" size="45px">Nolan Stucky!</Heading>
+
+                                    <Anchor onClick={executeScrollToAboutMe} color="white"><Text size="25px">Learn More About Me</Text></Anchor>
+                                </Box>
+                            </motion.div>
+
+
+                        </Box>
+
+                        <Box gridArea="about" ref={myAboutMe} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="180vh">
+                            <motion.div
+                            // ref={ref}
+                            // animate={controls}
+                            // initial="hidden"
+                            // transition={{ duration: 0.3 }}
+                            // variants={{
+                            //     visible: { opacity: 1, scale: 1 },
+                            //     hidden: { opacity: 0, scale: 0 }
+                            // }}
+
+                            >
+                                <Box align="center">
+
+                                    <Grid
+                                        areas={[
+                                            ['picture'],
+                                            ['about'],
+
+                                        ]}
+                                        columns={['flex']}
+                                        rows={['flex']}
+
+                                        responsive="true"
+                                    >
+
+
+
+                                        <Box gridArea="picture" height="250px" width="250px" margin={{ top: "50px", right: "0px" }}>
+                                            <Carousel play={5000} >
+                                                <Image fill="true" src={nolanSnow} />
+                                                <Image fill="true" src={nolanTree} />
+                                                <Image fill="true" src={nolanDog} />
+                                            </Carousel>
+                                        </Box>
+
+                                        <Box gridArea="about" height="150px" width="150px" margin={{ top: "100px", left: "-25px", bottom: "50px" }}>
+                                            <Paragraph color="white" margin={{ right: "-175px" }}>
+                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                            </Paragraph>
+                                            <Paragraph color="white" margin={{ right: "-175px" }}>
+                                                I have a passion for learning especially when it comes to things that interest me.
+                                            </Paragraph>
+                                            <Paragraph color="white" margin={{ right: "-175px" }}>
+                                                Always trying to create aesthetically pleasing applications for users to enjoy. That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.
+                                            </Paragraph>
+                                            <Paragraph color="white" margin={{ right: "-175px" }}>
+                                                I also love to snowboard and hope that you enjoy this serene background as much as I do!
+                                            </Paragraph>
+
+                                            <Box>
+                                                <Anchor onClick={executeScrollToProjects} color="white"><Text size="20px">See my Projects!</Text></Anchor>
+                                            </Box>
+
+                                        </Box>
                                     </Grid>
 
                                 </Box>
@@ -621,9 +740,127 @@ export default function Home() {
                         </Box>
 
 
+                        <Box gridArea="projects" ref={myProjects} style={{ background: 'rgba(0, 0, 0, 0.3)' }} margin={{ top: "15px" }} width="100%" height="100vh">
+                            <motion.div
+                            // ref={refProjects}
+                            // animate={controlsProjects}
+                            // initial="visible"
+                            // transition={{ duration: 0.1 }}
+                            // variants={{
+                            //     visible: { opacity: 1, scale: 1 },
+                            //     hidden: { opacity: 0, scale: 0 }
+                            // }}
+                            >
+                                <Box margin={{ top: "100px" }} align="center">
+
+                                    <Grid
+                                        areas={[
+                                            ['project1'],
+                                            ['project2'],
+                                            ['project3'],
+                                            ['project4'],
+                                            ['project5'],
+                                        ]}
+                                        columns={['flex']}
+
+
+                                        responsive="true"
+                                    >
+                                        <Box gridArea="project1" pad="large" label="show1" onClick={() => setOpen1(!open1)}>
+
+                                            <motion.div
+                                                whileHover={{ scale: 1.1 }}
+                                                onHoverStart={() => console.log('Hover starts')}
+                                                onHoverEnd={e => { }}
+
+                                            >
+                                                <ProjectPictureCard props={projectData[0]} />
+                                                <Collapsible open={open1}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[0].description}
+                                                    </Paragraph>
+                                                </Collapsible>
+
+                                            </motion.div>
+                                        </Box>
+
+                                        <Box gridArea="project2" pad="large" label="show2" onClick={() => setOpen2(!open2)}>
+
+                                            <motion.div
+                                                whileHover={{ scale: 1.1 }}
+                                                onHoverStart={() => console.log('Hover starts')}
+                                                onHoverEnd={e => { }}
+
+                                            >
+                                                <ProjectPictureCard props={projectData[1]} />
+                                                <Collapsible open={open2}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[1].description}
+                                                    </Paragraph>
+                                                    <Box align="center">
+                                                        <Button href={projectData[1].deployedLink}><Heroku /><Text color="white">Deployed Link</Text></Button>
+                                                        <Button href={projectData[1].githubLink} margin={{ left: "px", }}><Github /><Text color="white">Github Link</Text></Button>
+                                                    </Box>
+                                                </Collapsible>
+                                            </motion.div>
+                                        </Box>
+
+                                        <Box gridArea="project3" pad="large" label="show3" onClick={() => setOpen3(!open3)}>
+
+                                            <motion.div
+                                                whileHover={{ scale: 1.1 }}
+                                                onHoverStart={() => console.log('Hover starts')}
+                                                onHoverEnd={e => { }}
+
+                                            >
+                                                <ProjectPictureCard props={projectData[3]} />
+                                                <Collapsible open={open3}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[3].description}
+                                                    </Paragraph>
+                                                </Collapsible>
+                                            </motion.div>
+                                        </Box>
+
+                                        <Box gridArea="project4" pad="large" label="show4" onClick={() => setOpen4(!open4)}>
+
+                                            <motion.div
+                                                whileHover={{ scale: 1.1 }}
+                                                onHoverStart={() => console.log('Hover starts')}
+                                                onHoverEnd={e => { }}
+
+                                            >
+                                                <ProjectPictureCard props={projectData[5]} />
+                                                <Collapsible open={open4}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[4].description}
+                                                    </Paragraph>
+                                                </Collapsible>
+                                            </motion.div>
+                                        </Box>
+
+                                        <Box gridArea="project5" pad="large" label="show5" onClick={() => setOpen5(!open5)}>
+
+                                            <motion.div
+                                                whileHover={{ scale: 1.1 }}
+                                                onHoverStart={() => console.log('Hover starts')}
+                                                onHoverEnd={e => { }}
+
+                                            >
+                                                <ProjectPictureCard props={projectData[5]} />
+                                                <Collapsible open={open5}>
+                                                    <Paragraph margin="medium" color="white">
+                                                        {projectData[5].description}
+                                                    </Paragraph>
+                                                </Collapsible>
+                                            </motion.div>
+                                        </Box>
+                                    </Grid>
+                                </Box>
+                            </motion.div>
+                        </Box>
                     </Grid>
                 </Box>
-
             </MediaQuery>
         </Stack>
 
