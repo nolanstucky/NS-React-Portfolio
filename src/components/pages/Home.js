@@ -190,7 +190,7 @@ export default function Home() {
 
 
 
-                                        <Box gridArea="picture" height="375px" width="375px" margin={{ top: "250px", right: "250px" }}>
+                                        <Box gridArea="picture" height="375px" width="375px" margin={{ top: "230px", right: "250px" }}>
                                             <Carousel play={5000} >
                                                 <Image fill="true" src={nolanSnow} />
                                                 <Image fill="true" src={nolanTree} />
@@ -213,20 +213,26 @@ export default function Home() {
                                             </Box>
                                         </Box>
 
-                                        <Box gridArea="about" height="medium" width="medium" margin={{ top: "250px", right: "50px" }}>
-                                            <Paragraph margin={{ "left": "-50px", }} color="white">
-                                                I am a software developer that has been 
-                                            </Paragraph>
-                                            <Paragraph margin={{ "left": "-50px", }} color="white">
+                                        <Box gridArea="about" height="medium" width="medium" margin={{ top: "200px", right: "50px" }}>
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px" }} color="white" style={{fontSize:"23px"}}>
                                                 I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
                                             </Paragraph>
-                                            <Paragraph margin={{ "left": "-50px", }} color="white">
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px"}} color="white" style={{fontSize:"23px"}}>
+                                                I have a passion for learning especially when it comes to things that interest me.
                                             </Paragraph>
-                                            <Paragraph margin={{ "left": "-50px", }} color="white">
-                                                I am a full stack web developer that absolutely loves the world of technology ever since I built my own computer when I was a child.
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px"}} color="white" style={{fontSize:"23px"}}>
+                                                Which includes <span style={{ color: "#FCE181" }}>React.js</span>, <span style={{ color: "#FCE181" }}>JavaScript</span>, and <span style={{ color: "#FCE181" }}>Unity.</span>
                                             </Paragraph>
-                                            <Box margin={{left:"50px"}}>
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px"}} color="white" style={{fontSize:"23px"}}>
+                                                Always trying to create aesthetically pleasing applications for users to enjoy. 
+                                            </Paragraph>
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px"}} color="white" style={{fontSize:"23px"}}>
+                                                That means I am fascinated in the latest in modern web development as I continue to sharpen my skills in that field.
+                                            </Paragraph>
+                                            <Paragraph margin={{ "left": "-50px", "bottom":"-5px"}} color="white" style={{fontSize:"23px"}}>
+                                                I also love to snowboard and hope that you enjoy this serene background as much as I do!
+                                            </Paragraph>
+                                            <Box margin={{left:"50px",top:"50px"}}>
                                                 <Anchor onClick={executeScrollToProjects} color="white"><Text size="25px">See my Projects!</Text></Anchor>
                                             </Box>
                                         </Box>
@@ -359,7 +365,7 @@ export default function Home() {
                                                         background={{ opacity: "50%", color: "#0c101e" }}
                                                         round="medium"
                                                     >
-                                                        <ProjectModal props={projectData[5]} />
+                                                        <ProjectModal props={projectData[6]} />
 
                                                     </Layer>
                                                 )}
@@ -369,7 +375,7 @@ export default function Home() {
                                                     onHoverEnd={e => { }}
 
                                                 >
-                                                    <ProjectPictureCard props={projectData[5]} />
+                                                    <ProjectPictureCard props={projectData[6]} />
                                                 </motion.div>
                                             </Box>
                                             {/* 
