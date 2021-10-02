@@ -49,7 +49,8 @@ const projectData = [
         image: "https://github.com/nolanstucky/NS-React-Portfolio/blob/main/public/assets/LolChampTracker.gif?raw=true",
         description: "This is a web application powered by react.js using data pulled from league of legends datadragon to keep track of every champion. As well as storing that information to local storage to be able to save progress.",
         deployedLink: "https://nolanstucky.github.io/LoLChampTracker/",
-        githubLink: "https://github.com/nolanstucky/LoLChampTracker"
+        githubLink: "https://github.com/nolanstucky/LoLChampTracker",
+        technologies: "React, Material UI, Framer Motion, Riot's Data Dragon api, "
     },
 ]
 module.exports = projectData;

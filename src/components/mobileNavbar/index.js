@@ -27,11 +27,11 @@ class MobileNavbar extends Component {
                         
                     </Box>
 
-                    <Box direction="row" align="center" gap="small" pad="small">
+                    {/* <Box direction="row" align="center" gap="small" pad="small">
                         <Anchor>
                         <Link to='/projects' style={{ color: '#FCE181', textDecoration: 'inherit' }}>Projects</Link>
                         </Anchor>
-                    </Box>
+                    </Box> */}
 
                     <Box direction="row" align="center" gap="small" pad="small" margin={{"right":"15px"}}>
                         <Anchor>
